@@ -1,0 +1,30 @@
+{
+  "name": "kmag2",
+  "version": "1.0.0",
+  "description": "kMag web app per Magazzino",
+  "main": "index.js",
+  "scripts": {
+    "devSync": "node _dev-tools/devRsync.js",
+    "watchDev": "node _dev-tools/watchProjectDev.js",
+    "espSync": "node _dev-tools/espRsync.js",
+    "espConfigSync": "node _dev-tools/esConfigSync.js",
+    "fraSync": "node _dev-tools/fraRsync.js",
+    "fraConfigSync": "node _dev-tools/frConfigSync.js",
+    "itaPcSync": "node _dev-tools/itaPcRsync.js",
+    "itaConfigSync": "node _dev-tools/itConfigSync.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucaciotti/kMag2.git"
+  },
+  "author": "Andrea Stambazzi (+Luca Ciotti)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucaciotti/kMag2/issues"
+  },
+  "homepage": "https://github.com/lucaciotti/kMag2#readme",
+  "devDependencies": {
+    "rsync": "^0.6.1",
+    "watch": "^1.0.2"
+  }
+}

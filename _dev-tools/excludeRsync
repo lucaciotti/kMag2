@@ -1,0 +1,10 @@
+.git/
+_dev-tools/
+config/
+config_fr/
+config_es/
+config_it/
+dist/img/
+images/
+node_modules/
+.gitignore
