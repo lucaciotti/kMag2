@@ -1,0 +1,8 @@
+.git/
+_dev-tools/
+config/*
+config_fr/
+config_es/
+config_it/
+node_modules/
+.gitignore

@@ -4,14 +4,15 @@
   "description": "kMag web app per Magazzino",
   "main": "index.js",
   "scripts": {
-    "devSync": "node _dev-tools/devRsync.js",
-    "watchDev": "node _dev-tools/watchProjectDev.js",
-    "espSync": "node _dev-tools/espRsync.js",
-    "espConfigSync": "node _dev-tools/esConfigSync.js",
-    "fraSync": "node _dev-tools/fraRsync.js",
-    "fraConfigSync": "node _dev-tools/frConfigSync.js",
-    "itaPcSync": "node _dev-tools/itaPcRsync.js",
-    "itaConfigSync": "node _dev-tools/itConfigSync.js"
+    "devSync": "node _dev-tools/rSync/dev/devRsync.js",
+    "devConfigSync": "node _dev-tools/rSync/dev/devConfigSync.js",
+    "watchDev": "node _dev-tools/rSync/dev/watchProjectDev.js",
+    "espSync": "node _dev-tools/rSync/prod/espRsync.js",
+    "espConfigSync": "node _dev-tools/rSync/prod/esConfigSync.js",
+    "fraSync": "node _dev-tools/rSync/prod/fraRsync.js",
+    "fraConfigSync": "node _dev-tools/rSync/prod/frConfigSync.js",
+    "itaPcSync": "node _dev-tools/rSync/prod/itRsync.js",
+    "itaConfigSync": "node _dev-tools/rSync/prod/itConfigSync.js"
   },
   "repository": {
     "type": "git",

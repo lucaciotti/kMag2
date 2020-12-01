@@ -6,9 +6,9 @@ var rsync = new Rsync()
     .shell('ssh')
     .delete ()
     .flags('avz')
-    .set('exclude-from', '_dev-tools/excluderSync')
-    .source('/c/PROJECTS/kMag2/')
-    .destination('ced@172.17.0.203:/var/www/html/kMag2/');
+    .set('exclude-from', '_dev-tools/excluderSync_dev')
+    .source('/c/PROJECTS/kMag2/src/')
+    .destination('ced@172.16.9.39:/var/www/html/kMagDev/');
 
 var rsyncPid = null;
 
