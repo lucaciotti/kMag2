@@ -35,6 +35,6 @@ class CONFIGWEB {
 
     public static $BANC_PRT = '';
 
-    public static $IS_FILIALE = false;
+    public static $IS_FILIALE = true;
 
 }

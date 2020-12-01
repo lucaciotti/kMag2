@@ -1,4 +1,5 @@
 <?php
+define("SITE_PATH", getcwd());
 $termid = 0;
 if( isset($_COOKIE["tid"]) ) {
     $termid = $_COOKIE["tid"];
@@ -37,8 +38,8 @@ if( isset($_COOKIE["tid"]) ) {
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!--    <link rel="stylesheet" href="dist/css/pulldelete.css">-->
 
-    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/kMag2/libs/apiObj.php'); ?>
-    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/kMag2/config/global_config.php'); ?>
+    <?php include_once(SITE_PATH . '/libs/apiObj.php'); ?>
+    <?php include_once(SITE_PATH . '/config/global_config.php'); ?>
 
     <?php include_once "scripts.php"; ?>
     <?php include_once "plugins\php-barcode-generator-master\BarcodeGenerator.php"; ?>

@@ -1,5 +1,6 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT']."/kMag2/config/global_config.php");
+define("SITE_PATH", getcwd());
+include_once(SITE_PATH . "/config/global_config.php");
 
 // https://www.weichieprojects.com/blog/curl-api-calls-with-php/
 

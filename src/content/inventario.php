@@ -113,6 +113,8 @@
 </div>
 
 <input readonly id="termid" value="<?php echo $termid; ?>" hidden>
+<input readonly id="ubicazObb" value="<?php echo (CONFIGWEB::$IS_FILIALE ? "0" : "1"); ?>" hidden>
+<input readonly id="umDefault" value="" hidden>
 
 <script>
     $(document).ready(function() {
@@ -288,6 +290,7 @@
             var fatt3 = arrArt["success"][0]["fatt3"];
             var lottoSi = arrArt["success"][0]["lotti"];
 
+            $("#umDefault").val(um);
             $("#unmisura").empty();
             $("#unmisura").append('<option value="1">' + um + '</option>');
 
@@ -317,9 +320,14 @@
                 $("#lotto").attr("readonly", "readonly");
                 $("#btnCercaLotto").hide();
 
-                //Il lotto l'ho trovato
                 $("#riga_ubicazione").show();
-                $("#ubicazione").focus();
+                //Solo se Ubicaz è Obbligatoria
+                if ($("#ubicazObb").val() == "1") {
+                    $("#ubicazione").focus();
+                } else {
+                    $("#riga_qta").show();
+                    $("#quantita").focus();
+                }
             }
         }
     }
@@ -343,25 +351,39 @@
             success: function(obj, textstatus) {
                 var myArray = JSON.parse(obj);
                 if (myArray["success"].length == 0) {
+                    alert("Il lotto non esiste. IMPORTANTE verificare su ARCA!");
+                    $("#lotto").val("");
+                    $("#lotto").focus();
                     //Il lotto non esiste
-                    if (!confirm("Il lotto non esiste. Confermare lo stesso?")) {
-                        $("#lotto").val("");
-                        $("#lotto").focus();
-                    } else {
-                        $("#lotto").attr("readonly", "readonly");
-                        $("#btnCercaLotto").hide();
+                    // if (!confirm("Il lotto non esiste. Confermare lo stesso?")) {
+                    //     $("#lotto").val("");
+                    //     $("#lotto").focus();
+                    // } else {
+                    //     $("#lotto").attr("readonly", "readonly");
+                    //     $("#btnCercaLotto").hide();
 
-                        //il lotto va bene lo stesso
-                        $("#riga_ubicazione").show();
-                        $("#ubicazione").focus();
-                    }
+                    //     //il lotto va bene lo stesso
+                    //     $("#riga_ubicazione").show();
+                    //     if ($("#ubicazObb").val() == "1") {
+                    //         $("#ubicazione").focus();
+                    //     } else {
+                    //         $("#riga_qta").show();
+                    //         $("#quantita").focus();
+                    //     }
+                    // }
                 } else {
                     $("#lotto").attr("readonly", "readonly");
                     $("#btnCercaLotto").hide();
 
                     //Il lotto l'ho trovato
                     $("#riga_ubicazione").show();
-                    $("#ubicazione").focus();
+                    //Solo se Ubicaz è Obbligatoria
+                    if ($("#ubicazObb").val() == "1") {
+                        $("#ubicazione").focus();
+                    } else {
+                        $("#riga_qta").show();
+                        $("#quantita").focus();
+                    }
                 }
             }
         });
@@ -373,7 +395,7 @@
         }
         var ubicazione = $("#ubicazione").val().toUpperCase();
 
-        if (ubicazione.trim() == "") {
+        if (ubicazione.trim() == "" && $("#ubicazObb").val() == "1") {
             //l'ubicazione è un campo obbligatorio
             alert("L'ubicazione non può essere vuota.");
             $("#ubicazione").focus();
@@ -421,11 +443,18 @@
             return;
         }
 
+        var umDefTxt = $("#umDefault").val();
+        var umSelTxt = $("#unmisura option:selected").text();
         var um = $("#unmisura").val();
         if (um != 1) {
-            if (!confirm("Attenzione stai sparando " + um * qta + " unità. Confermare?")) {
-                return;
-            }
+            var qta2 = qta * um;
+            var message = umSelTxt + " " + qta + "  ==>  " + umDefTxt + " " + qta2 + "\nPROCEDO?";
+        } else {
+            var message = umTxt + " " + qta + "\nPROCEDO?";
+        }
+
+        if (!confirm("ATTENZIONE!!\n" + message)) {
+            return;
         }
 
         $("#btnConferma").show();

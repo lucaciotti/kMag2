@@ -1,5 +1,7 @@
-<?php include_once($_SERVER['DOCUMENT_ROOT'] . '/kMag2/libs/apiObj.php'); ?>
-<?php include_once($_SERVER['DOCUMENT_ROOT'] . '/kMag2/config/global_config.php'); ?>
+<?php
+define("SITE_PATH", getcwd());
+include_once(SITE_PATH . '/libs/apiObj.php');
+include_once(SITE_PATH . '/config/global_config.php'); ?>
 
 <?php
 //questa pagina esegue la query al db

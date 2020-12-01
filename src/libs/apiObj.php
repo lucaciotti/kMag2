@@ -1,6 +1,7 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'] . '/kMag2/libs/arcaRestAPI.php');
-include_once($_SERVER['DOCUMENT_ROOT'] . '/kMag2/libs/utilsFunctions.php');
+define("SITE_PATH", getcwd());
+include_once(SITE_PATH . '/libs/arcaRestAPI.php');
+include_once(SITE_PATH . '/libs/utilsFunctions.php');
 
 class apiObj{
     private static $initialized;
