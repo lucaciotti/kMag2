@@ -7,12 +7,12 @@
     "devSync": "node _dev-tools/rSync/dev/devRsync.js",
     "devConfigSync": "node _dev-tools/rSync/dev/devConfigSync.js",
     "watchDev": "node _dev-tools/rSync/dev/watchProjectDev.js",
-    "espSync": "node _dev-tools/rSync/prod/espRsync.js",
-    "espConfigSync": "node _dev-tools/rSync/prod/esConfigSync.js",
-    "fraSync": "node _dev-tools/rSync/prod/fraRsync.js",
-    "fraConfigSync": "node _dev-tools/rSync/prod/frConfigSync.js",
-    "itaPcSync": "node _dev-tools/rSync/prod/itRsync.js",
-    "itaConfigSync": "node _dev-tools/rSync/prod/itConfigSync.js"
+    "espSync": "node _dev-tools/rSync/prod/es/espRsync.js",
+    "espConfigSync": "node _dev-tools/rSync/prod/es/esConfigSync.js",
+    "fraSync": "node _dev-tools/rSync/prod/fr/fraRsync.js",
+    "fraConfigSync": "node _dev-tools/rSync/prod/fr/frConfigSync.js",
+    "itaSync": "node _dev-tools/rSync/prod/it/itRsync.js",
+    "itaConfigSync": "node _dev-tools/rSync/prod/it/itConfigSync.js"
   },
   "repository": {
     "type": "git",

@@ -34,9 +34,8 @@ function CercaArticolo(codicearti){
 
 function CercaBarcodeArt(barcode){
     var arrArticolo = null;
-    var query = "\
-                SELECT \
-                codice, descrizion, magart.unmisura, unmisura1, unmisura2, unmisura3, fatt1, fatt2, fatt3, lotti \
+    var query = "SELECT \
+                codice, descrizion, magart.unmisura, unmisura1, unmisura2, unmisura3, fatt1, fatt2, fatt3, lotti, \
                 magalias.unmisura as um \
                 FROM \
                 MagArt INNER JOIN MagAlias ON allt(magalias.codicearti)==allt(magart.codice) \

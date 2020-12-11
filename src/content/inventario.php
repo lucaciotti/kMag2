@@ -450,7 +450,7 @@
             var qta2 = qta * um;
             var message = umSelTxt + " " + qta + "  ==>  " + umDefTxt + " " + qta2 + "\nPROCEDO?";
         } else {
-            var message = umTxt + " " + qta + "\nPROCEDO?";
+            var message = umDefTxt + " " + qta + "\nPROCEDO?";
         }
 
         if (!confirm("ATTENZIONE!!\n" + message)) {
