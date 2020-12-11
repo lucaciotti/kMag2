@@ -151,7 +151,7 @@
         }
 
         var idcartellino = $("#cartellino").val().trim().toUpperCase();
-        if (idcartellino == "") {
+        if (idcartellino == "" || idcartellino.length > 13) {
             alert("Cartellino non trovato!");
             $("#cartellino").val("");
             $("#cartellino").focus();
@@ -372,6 +372,7 @@
                     //     }
                     // }
                 } else {
+                    $("#lotto").val(lotto);
                     $("#lotto").attr("readonly", "readonly");
                     $("#btnCercaLotto").hide();
 
@@ -418,6 +419,7 @@
                     $("#ubicazione").val("");
                     $("#ubicazione").focus();
                 } else {
+                    $("#ubicazione").val(ubicazione);
                     $("#ubicazione").attr("readonly", "readonly");
                     $("#btnCercaUbicazione").hide();
 

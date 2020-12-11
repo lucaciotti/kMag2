@@ -4,6 +4,7 @@
   "description": "kMag web app per Magazzino",
   "main": "index.js",
   "scripts": {
+    "fromDevSync": "node _dev-tools/rSync/dev/fromDevRsync.js",
     "devSync": "node _dev-tools/rSync/dev/devRsync.js",
     "devConfigSync": "node _dev-tools/rSync/dev/devConfigSync.js",
     "watchDev": "node _dev-tools/rSync/dev/watchProjectDev.js",
